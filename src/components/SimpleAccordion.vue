@@ -8,6 +8,7 @@ const props = defineProps({
 
 const { conteudo } = toRefs(props)
 const accordionAberto = ref(false)
+const svgPath = new URL('/src/assets/seta.svg', import.meta.url).href
 
 function toggleAccordion() {
     if (conteudo.value) {
@@ -22,7 +23,7 @@ function toggleAccordion() {
             <h2>{{ titulo }}</h2>
             <InlineSvg
                 v-if="conteudo"
-                src="/src/assets/seta.svg"
+                :src="svgPath"
                 :class="{ 'inverter': accordionAberto }"
             ></InlineSvg>
         </button>
