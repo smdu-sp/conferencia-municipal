@@ -24,8 +24,8 @@ footer {
 }
 
 #footer-logo {
-    width: 420px;
-    height: 100px;
+    width: 500px;
+    height: 90px;
     background-repeat: no-repeat;
     background-size: contain;
 }
