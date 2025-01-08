@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import footerLogo from '@/assets/footer-logo.png'
+import { store } from '@/store/store.js'
 
 onMounted(() => {
     document.getElementById('footer-logo').style.backgroundImage = `url('${footerLogo}')`
@@ -8,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <footer>
+    <footer v-show="store.carregado">
         <div id="footer-logo"></div>
     </footer>
 </template>

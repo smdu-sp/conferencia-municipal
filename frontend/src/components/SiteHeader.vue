@@ -1,6 +1,8 @@
 <script setup>
 import { onMounted } from 'vue'
 import headerBg from '@/assets/header-bg.png'
+import { store } from '@/store/store.js'
+import { VueSpinner } from 'vue3-spinners'
 
 onMounted(() => {
     document.getElementById('site-banner').style.backgroundImage = `url('${headerBg}')`
@@ -8,7 +10,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <header>
+    <VueSpinner v-if="!store.carregado" size="60" color="black" />
+    <header v-show="store.carregado">
         <div id="site-banner"></div>
     </header>
 </template>

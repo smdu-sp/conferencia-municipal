@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import SimpleAccordion from '@/components/SimpleAccordion.vue'
+import { store } from '@/store/store.js'
 
 const apiURL = '/wp-json/wp/v2/pages?slug=home'
 const conteudo = ref(null)
@@ -8,12 +9,14 @@ const conteudo = ref(null)
 fetch(apiURL)
   .then((response) => response.json())
   .then((data) => (conteudo.value = data[0]['acf']))
+  .then(() => store.carregado = true)
+
 </script>
 
 <template>
-  <main v-if="conteudo">
-    <section v-if="conteudo.introducao" class="introducao" v-html="conteudo.introducao"></section>
-    <section v-if="conteudo.accordion" class="conteudo">
+  <main v-if="store.carregado">
+    <section class="introducao" v-html="conteudo.introducao"></section>
+    <section class="conteudo">
       <template v-for="(content, index) in conteudo.accordion" :key="`accordion-${index}`">
         <SimpleAccordion :titulo="content.titulo" :conteudo="content.conteudo"></SimpleAccordion>
       </template>
