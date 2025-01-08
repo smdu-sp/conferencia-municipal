@@ -1,0 +1,50 @@
+# ignore everything in the root except this file and exceptions:
+/*
+!.gitignore
+!wp-content/
+!lc-modules/
+!css/
+!js/
+!vue/
+!acf/
+
+# Incluir apenas assets específicos
+!assets/
+assets/*
+!assets/favicon.ico
+!assets/css/
+!assets/acf/
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins", themes" directory
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/conferencia-municipal/
+
+# ignore these plugins
+wp-content/plugins/
+
+# ignore specific themes
+wp-content/themes/twenty*/
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+*db-config.php
+*conexao.php
+*protocolo.php
+*cmpu-comprovante-chaves.php
+
+
+# ignora arquivos de teste
+*_old*
+*.bkp
+*bkp*
+*teste.php
+*senhaweb*
