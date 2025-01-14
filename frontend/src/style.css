@@ -6,11 +6,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "SofiaSans";
+  src: url("@/assets/SofiaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
 
 :root {
+  font-size: 10px;
   font-family: "OpenSans";
   line-height: 1.5;
   font-weight: 400;
