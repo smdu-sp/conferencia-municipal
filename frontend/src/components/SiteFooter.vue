@@ -16,6 +16,7 @@ onMounted(() => {
 
 <style scoped>
 footer {
+    margin-top: 200px;
     background-color: #2e2d2c;
     width: 1024px;
     height: 140px;
