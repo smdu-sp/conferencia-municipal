@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import wpautop from 'wpautop'
 import SimpleAccordion from '@/components/SimpleAccordion.vue'
 import { store } from '@/store/store.js'
 
@@ -15,10 +16,9 @@ fetch(apiURL)
 
 <template>
   <main v-if="store.carregado">
-    <section class="introducao" v-html="conteudo.introducao"></section>
     <section class="conteudo">
       <template v-for="(content, index) in conteudo.accordion" :key="`accordion-${index}`">
-        <SimpleAccordion :titulo="content.titulo" :conteudo="content.conteudo"></SimpleAccordion>
+        <SimpleAccordion :titulo="content.titulo" :conteudo="wpautop(content.conteudo)"></SimpleAccordion>
       </template>
     </section>
     <section class="informativo" v-html="conteudo.informativo"></section>
@@ -65,5 +65,9 @@ fetch(apiURL)
 
 .informativo p a {
   color: #1053ff;
+}
+
+:deep(strong) {
+  font-weight: bold;
 }
 </style>
