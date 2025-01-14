@@ -70,7 +70,7 @@ fetch(apiURL)
     <section class="titulo-principal" v-html="formatarConteudo(conteudo.introducao)"></section>
     <section class="conteudo">
       <template v-for="(content, index) in conteudo.accordion" :key="`accordion-${index}`">
-        <SimpleAccordion :titulo="content.titulo" :conteudo="formatarConteudo(content.conteudo)"></SimpleAccordion>
+        <SimpleAccordion :id="index + 1" :titulo="content.titulo" :conteudo="formatarConteudo(content.conteudo)"></SimpleAccordion>
       </template>
     </section>
     <section v-if="conteudo.informativo" class="informativo" v-html="formatarConteudo(conteudo.informativo)"></section>
