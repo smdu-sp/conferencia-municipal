@@ -26,4 +26,17 @@ header{
     width: 960px;
     height: 400px;
 }
+
+@media(max-width: 960px) {
+    header {
+        margin: 0;
+        width: 100vw;
+    }
+
+    #site-banner {
+        width: 100vw;
+        height: calc(100vw * 0.417);
+        background-size: cover;
+    }
+}
 </style>

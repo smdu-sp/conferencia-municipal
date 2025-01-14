@@ -30,4 +30,16 @@ footer {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+@media(max-width: 960px) {
+    footer {
+        width: 100vw;
+        padding: 20px;
+    }
+
+    #footer-logo {
+        width: 100vw;
+        height: 120px
+    }
+}
 </style>

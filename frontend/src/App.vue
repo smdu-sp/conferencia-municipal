@@ -18,4 +18,14 @@ import PageContent from '@/components/pages/home/PageContent.vue'
   margin: 0 auto;
   padding: 0 20px;
 }
+
+@media (max-width: 960px) {
+  .grid-container {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+}
+
 </style>
