@@ -4,8 +4,8 @@ import wpautop from 'wpautop'
 import SimpleAccordion from '@/components/SimpleAccordion.vue'
 import { store } from '@/store/store.js'
 
-const apiURL = 'http://localhost/wp-json/wp/v2/pages?slug=home'
-const mediaURL = 'http://localhost/wp-json/wp/v2/media'
+const apiURL = '/wp-json/wp/v2/pages?slug=home'
+const mediaURL = '/wp-json/wp/v2/media'
 const conteudo = ref(null)
 const media = ref(null)
 
@@ -42,7 +42,7 @@ function adicionarGaleria(conteudo) {
       htmlGaleria += `
         <dl class="gallery-item">
 			    <dt class="gallery-icon landscape">
-				    <a href="${mediaObj.source_url}"> <img width="300" height="225" src="${mediaObj.media_details.sizes.medium.source_url}" class="attachment-medium size-medium" alt="${mediaObj.alt_text}"></a>
+				    <a href="${mediaObj.source_url}"> <img width="300" height="225" src="${mediaObj.source_url}" class="attachment-medium size-medium" alt="${mediaObj.alt_text}"></a>
 			    </dt>
         </dl>`
     }
@@ -60,7 +60,6 @@ fetch(apiURL)
   .then((response) => response.json())
   .then((data) => {
     media.value = data
-    console.log(media.value)
   })
   .then(() => (store.carregado = true))
 </script>
