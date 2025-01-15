@@ -44,7 +44,8 @@ function adicionarGaleria(conteudo) {
 			    <dt class="gallery-icon landscape">
 				    <a href="${mediaObj.source_url}"> <img width="300" height="225" src="${mediaObj.source_url}" class="attachment-medium size-medium" alt="${mediaObj.alt_text}"></a>
 			    </dt>
-        </dl>`
+        </dl>
+      `
     }
 
     return `<div class="gallery galleryid-48 gallery-columns-3 gallery-size-medium">${htmlGaleria}</div>`
@@ -69,7 +70,11 @@ fetch(apiURL)
     <section class="titulo-principal" v-html="formatarConteudo(conteudo.introducao)"></section>
     <section class="conteudo">
       <template v-for="(content, index) in conteudo.accordion" :key="`accordion-${index}`">
-        <SimpleAccordion :id="index + 1" :titulo="content.titulo" :conteudo="formatarConteudo(content.conteudo)"></SimpleAccordion>
+        <SimpleAccordion
+          :id="index + 1"
+          :titulo="content.titulo"
+          :conteudo="formatarConteudo(content.conteudo)"
+        ></SimpleAccordion>
       </template>
     </section>
     <section v-if="conteudo.informativo" class="informativo" v-html="formatarConteudo(conteudo.informativo)"></section>
@@ -140,6 +145,7 @@ fetch(apiURL)
   padding: 5px 8px;
   margin-bottom: 4px;
   letter-spacing: 0.5px;
+  margin-top: 40px;
 }
 
 :deep(.titulo-regionais > strong) {
