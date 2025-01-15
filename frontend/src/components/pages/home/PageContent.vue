@@ -67,7 +67,7 @@ fetch(apiURL)
 
 <template>
   <main v-if="store.carregado">
-    <section class="titulo-principal" v-html="formatarConteudo(conteudo.introducao)"></section>
+    <section id="inicio-conteudo" class="titulo-principal" v-html="formatarConteudo(conteudo.introducao)"></section>
     <section class="conteudo">
       <template v-for="(content, index) in conteudo.accordion" :key="`accordion-${index}`">
         <SimpleAccordion
