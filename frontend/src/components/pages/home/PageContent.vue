@@ -6,7 +6,6 @@ import { store } from '@/store/store.js'
 
 const apiURL = '/wp-json/wp/v2/pages?slug=home'
 const mediaURL = '/wp-json/wp/v2/media'
-const conteudo = ref(null)
 const media = ref(null)
 
 function formatarConteudo(conteudo) {
@@ -55,7 +54,7 @@ function adicionarGaleria(conteudo) {
 fetch(apiURL)
   .then((response) => response.json())
   .then((data) => {
-    conteudo.value = data[0]['acf']
+    store.conteudo = data[0]['acf']
     return fetch(mediaURL)
   })
   .then((response) => response.json())
@@ -67,9 +66,9 @@ fetch(apiURL)
 
 <template>
   <main v-if="store.carregado">
-    <section id="inicio-conteudo" class="titulo-principal" v-html="formatarConteudo(conteudo.introducao)"></section>
+    <section id="inicio-conteudo" class="titulo-principal" v-html="formatarConteudo(store.conteudo.introducao)"></section>
     <section class="conteudo">
-      <template v-for="(content, index) in conteudo.accordion" :key="`accordion-${index}`">
+      <template v-for="(content, index) in store.conteudo.accordion" :key="`accordion-${index}`">
         <SimpleAccordion
           :id="index + 1"
           :titulo="content.titulo"
@@ -77,7 +76,7 @@ fetch(apiURL)
         ></SimpleAccordion>
       </template>
     </section>
-    <section v-if="conteudo.informativo" class="informativo" v-html="formatarConteudo(conteudo.informativo)"></section>
+    <section v-if="store.conteudo.informativo" class="informativo" v-html="formatarConteudo(store.conteudo.informativo)"></section>
   </main>
 </template>
 

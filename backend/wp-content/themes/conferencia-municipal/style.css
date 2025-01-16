@@ -22,9 +22,20 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* Main style */
 body {
-    line-height: 1.2;
+  line-height: 1.2;
 }
+
 p {
-    margin-top: 16px;
-    margin-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+noscript {
+  font-size: 2rem;
+  color: #000;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  text-align: center;
+  padding-top: 120px;
 }

@@ -9,7 +9,7 @@ const props = defineProps({
 
 const { conteudo } = toRefs(props)
 const accordionAberto = ref(false)
-const svgPath = new URL('/src/assets/seta.svg', import.meta.url).href
+const svgPath = new URL('@/assets/seta.svg', import.meta.url).href
 
 function toggleAccordion() {
   if (conteudo.value) {

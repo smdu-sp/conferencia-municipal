@@ -8,3 +8,4 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <noscript>Seu navegador não tem suporte a JavaScript ou está desativado. Este site necessita do JavaScript para funcionar corretamente.</noscript>
