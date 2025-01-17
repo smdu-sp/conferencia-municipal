@@ -41,7 +41,7 @@ function adicionarGaleria(conteudo) {
       htmlGaleria += `
         <dl class="gallery-item">
 			    <dt class="gallery-icon landscape">
-				    <a href="${mediaObj.source_url}"> <img width="300" height="225" src="${mediaObj.source_url}" class="attachment-medium size-medium" alt="${mediaObj.alt_text}"></a>
+				    <a href="${mediaObj.source_url}" data-lightbox="gallery" data-title="${mediaObj.title.rendered}" data-alt="${mediaObj.alt_text}"> <img width="300" height="225" src="${mediaObj.source_url}" class="attachment-medium size-medium" alt="${mediaObj.alt_text}"></a>
 			    </dt>
         </dl>
       `

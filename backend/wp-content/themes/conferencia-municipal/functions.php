@@ -23,6 +23,8 @@ function conferenciamunicipal_enqueue()
     wp_enqueue_script('jquery');
 
     if (is_front_page()) {
+        wp_enqueue_script('lightbox2', '/assets/js/lightbox.min.js');
+        wp_enqueue_style('lightbox2', '/assets/css/lightbox.min.css');
         wp_enqueue_style('home', '/assets/css/main.css');
         wp_enqueue_script_module('home', '/assets/js/main.js');
     }
